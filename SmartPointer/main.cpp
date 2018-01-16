@@ -25,13 +25,13 @@ void demoMakeShared();
 
 int main(){
 	cout << "=== Hello SmartPointer" << endl;
-	demoSharedToConst();
+//	demoSharedToConst();
 //	demoSharedConvertierungAB();
 //	demoSharedPointer();
-	demoUniquePointer();
+//	demoUniquePointer();
 //	demoMakeUnique();
 //	demoMakeShared();
-//	demoSharedPointerBadAlloc();
+	demoSharedPointerBadAlloc();
 
 }
 void demoMakeUnique(){
@@ -151,7 +151,11 @@ void demoSharedPointer(){
 }
 void demoSharedPointerBadAlloc(){
 	Counter::throwBadAlloc() = true;
-	SharedPointer<A> pA1(new A);
+	try{
+		SharedPointer<A> pA1(new A);
+	}catch(std::bad_alloc& e){
+		cout << "catch std::bad_alloc: " << e.what() << endl;
+	}
 
 }
 void demoUniquePointer(){
