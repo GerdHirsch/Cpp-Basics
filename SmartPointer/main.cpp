@@ -1,7 +1,6 @@
 #include <iostream> // cout, endl
 #include <utility> //move
 
-// Demo für bad_alloc_exception in Memberinitialisierung
 
 //#include "A2.h"
 #include "A4BaseBC.h"
@@ -16,6 +15,7 @@
 using namespace std;
 
 void demoSharedPointer();
+// Demo für bad_alloc_exception in Memberinitialisierung
 void demoSharedPointerBadAlloc();
 void demoUniquePointer();
 void demoSharedConvertierungAB();
@@ -27,11 +27,11 @@ int main(){
 	cout << "=== Hello SmartPointer" << endl;
 //	demoSharedToConst();
 //	demoSharedConvertierungAB();
-//	demoSharedPointer();
+	demoSharedPointer();
 //	demoUniquePointer();
 //	demoMakeUnique();
 //	demoMakeShared();
-	demoSharedPointerBadAlloc();
+//	demoSharedPointerBadAlloc();
 
 }
 void demoMakeUnique(){
@@ -81,16 +81,29 @@ void demoSharedToConst(){
 void demoSharedConvertierungAB(){
 	cout << "=== demoSharedConvertierungAB" << endl;
 	{
-		cout << "=== begin block" << endl;
+		cout << endl << "=== begin block" << endl;
 
-		cout << "=== SharedPointer<A> pA1(new A);" << endl;
-		SharedPointer<A> pA1(new A); //RAII
+//		cout << "=== SharedPointer<A> pA1(new A);" << endl;
+//		SharedPointer<A> pA1(new A); //RAII
+		cout << "=== SharedPointer<A> pA1(makeShared<A>());" << endl;
+		SharedPointer<A> pA1(makeShared<A>()); //RAII
+
+//		cout << "=== SharedPointer<A> pA2();" << endl;
+//		SharedPointer<A> pA2; //RAII
+//		cout << "=== pA2->operation();" << endl;
+//		pA2->operation();
 
 		cout << "=== SharedPointer<B> pB1(pA1);" << endl;
 		SharedPointer<B> pB1(pA1);
 
 		cout << "=== pB1->operation();" << endl;
 		pB1->operation();
+
+		cout << "=== SharedPointer<C> pC1(pA1);" << endl;
+		SharedPointer<C> pC1(pA1);
+
+		cout << "=== pC1->operation();" << endl;
+		pC1->operation();
 
 		cout << "=== pB1 = pA1;" << endl;
 		pB1 = pA1;
@@ -99,10 +112,12 @@ void demoSharedConvertierungAB(){
 		pB1 = std::move(pA1);
 
 		cout << "=== end block" << endl;
+		cout << endl;
 	}
 
+		cout << endl << "=== bevor block Move ctor" << endl;
 	{
-		cout << "=== begin block Move ctor" << endl;
+		cout << endl << "=== begin block Move ctor" << endl;
 
 		cout << "=== SharedPointer<A> pA2(new A);" << endl;
 		SharedPointer<A> pA2(new A); //RAII
@@ -119,7 +134,7 @@ void demoSharedPointer(){
 	cout << "=== demoSharedPointer" << endl;
 
 	cout << "=== SharedPointer<A> pA1(new A);" << endl;
-	SharedPointer<A> pA1(new A); //RAII
+	SharedPointer<A> pA1(makeShared<A>(42, "Demo")); //RAII
 
 	cout << "=== SharedPointer<B> pB1(new A);" << endl;
 	SharedPointer<B> pB1(new A); //RAII
@@ -176,7 +191,7 @@ void demoUniquePointer(){
 	UniquePointer<A> pA3(new A); //RAII
 
 	cout << "=== UniquePointer<B> pB2(std::move(pA3));" << endl;
-//	UniquePointer<B> pB2((pA3)); //RAII
+//	UniquePointer<B> pB2((pA3)); error: lvalue to rvalue
 	UniquePointer<B> pB2(std::move(pA3)); //RAII
 
 	cout << "=== pA2 = std::move(pA1);" << endl;

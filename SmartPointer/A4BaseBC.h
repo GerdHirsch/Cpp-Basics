@@ -7,8 +7,12 @@
 class A : public C, public B
 {
 public:
-	A() : C{}, B{} { std::cout << "A::A()" << std::endl; }
+	A() { std::cout << "A::A()" << std::endl; }
 	A(int i) : C{}, B{}, i{i} { std::cout << "A::A(int i: " << i << ")" << std::endl; }
+	A(int i, std::string const& name) : i{i} {
+		std::cout << "A(int i, std::string const&) i: " << i
+				<< " name: " << name
+				<< ")" << std::endl; }
 
 	//explicit // zum experimentieren
 	A(A const& src) : C{src}, B{src}, i{src.i}

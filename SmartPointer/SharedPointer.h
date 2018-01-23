@@ -197,9 +197,7 @@ template<class T, class ...ParamTypes>
 auto makeShared(ParamTypes&& ...params) //-> UniquePointer<T> // C++11/ohne C++14
 {
 	std::cout << "makeShared(ParamTypes&& ...params)" << std::endl;
-	SharedPointer<T> temp(
-			new T(std::forward<ParamTypes>(params)...)
-	);
-	return temp;
+	// RVO
+	return SharedPointer<T>(new T(std::forward<ParamTypes>(params)...) );
 }
 #endif /* SHAREDPOINTER_H_ */

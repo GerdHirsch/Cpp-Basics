@@ -79,9 +79,7 @@ template<class T, class ...ParamTypes>
 auto makeUnique(ParamTypes&& ...params) //-> UniquePointer<T> // C++11/ohne C++14
 {
 	std::cout << "makeUnique(ParamTypes&& ...params)" << std::endl;
-	UniquePointer<T> temp(
-			new T(std::forward<ParamTypes>(params)...)
-	);
-	return temp;
+	//RVO
+	return UniquePointer<T> (new T(std::forward<ParamTypes>(params)...));
 }
 #endif /* UNIQUEPOINTER_H_ */
