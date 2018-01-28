@@ -9,6 +9,7 @@
 #define A_H_
 
 #include <stdexcept>
+#include <iostream>
 
 class B {
 public:
@@ -60,6 +61,18 @@ public:
 	}
 
 	~A() { std::cout << "A::~A()" << std::endl; }
+
+	//=================================================================
+	// Type specific new/delete
+	//=================================================================
+	static void* operator new(std::size_t size){
+		std::cout << "void* A::operator new(std::size_t size)" << std::endl;
+		return ::operator new(size);
+	}
+	static void operator delete(void* p, std::size_t size){
+		std::cout << "void* A::operator delete(void* p, std::size_t size)" << std::endl;
+		::operator delete(p, size);
+	}
 };
 
 
