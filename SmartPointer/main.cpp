@@ -27,20 +27,31 @@ int main(){
 	cout << "=== Hello SmartPointer" << endl;
 //	demoSharedToConst();
 //	demoSharedConvertierungAB();
-	demoSharedPointer();
+//	demoSharedPointer();
 //	demoUniquePointer();
-//	demoMakeUnique();
+	demoMakeUnique();
 //	demoMakeShared();
 //	demoSharedPointerBadAlloc();
 
 }
 void demoMakeUnique(){
 	cout << "=== demoMakeUnique" << endl;
+	cout << "=== p1(makeUnique<A>() );" << endl;
 	auto p1(makeUnique<A>() );
+	cout << "=== p2 = makeUnique<A>(43);" << endl;
 	auto p2 = makeUnique<A>(43);
 
+	cout << "=== p3 = makeUnique<A>(*p1);" << endl;
+	auto p3 = makeUnique<A>(*p1);
+	cout << "=== p4 = makeUnique<A>(A(44));" << endl;
+	auto p4 = makeUnique<A>(A(44));
+
+	cout << "=== p1->operation();" << endl;
 	p1->operation();
+	cout << "=== p2->operation();" << endl;
 	p2->operation();
+	cout << "=== p4->operation();" << endl;
+	p4->operation();
 }
 void demoMakeShared(){
 	cout << "=== demoMakeShared" << endl;

@@ -57,7 +57,7 @@ void demoExplizitAutoPtrRef(){
 //		// der ctor von AutoPtrRef aber AutoPtr& deklariert ist
 //		cout << "AutoPtr::AutoPtrRef ref = returnAutoPtr();" << endl;
 //		AutoPtr::AutoPtrRef ref = returnAutoPtr();
-////		AutoPtr const& ref = demoReturnAutoPtr();
+////		AutoPtr const& ref = returnAutoPtr();
 //
 //		AutoPtr p(ref);
 //
