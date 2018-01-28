@@ -10,6 +10,7 @@
 #include <utility>
 using namespace std;
 
+// comment in for experience propose
 A f(){ return A(); }
 //void f(A&& a){ cout << "void f(A&& a)" << endl; }
 //void f(A& a){ cout << "void f(A& a)" << endl; }
