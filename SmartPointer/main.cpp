@@ -147,6 +147,8 @@ void demoSharedPointer(){
 	cout << "=== SharedPointer<A> pA1(new A);" << endl;
 	SharedPointer<A> pA1(makeShared<A>(42, "Demo")); //RAII
 
+	//delete pA1.operator->();
+
 	cout << "=== SharedPointer<B> pB1(new A);" << endl;
 	SharedPointer<B> pB1(new A); //RAII
 

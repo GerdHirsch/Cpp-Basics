@@ -1,6 +1,8 @@
 #ifndef A4_BASE_BC_H_
 #define A4_BASE_BC_H_
 
+#include <iostream>
+
 #include "C.h"
 #include "B.h"
 

@@ -40,7 +40,8 @@ A f6(A a) {
 void rvo(){
 	cout << "=== rvo return valaue optimization" << endl;
 	cout << "=== f1" << endl;
-	A a1 = f1();
+	A a1;// = f1();
+	a1 = f1();
 	cout << "=== f2" << endl;
 	A a2 = f2();
 	cout << "=== f3" << endl;

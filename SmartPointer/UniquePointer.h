@@ -14,10 +14,10 @@ template<class T>
 class UniquePointer{
 public:
 	UniquePointer(T* pT):resource(pT){
-		std::cout << "UniquePointer(T* pT)" << std::endl;
+		std::cout <<  __PRETTY_FUNCTION__  << std::endl;
 	}
 	~UniquePointer(){
-		std::cout << "~UniquePointer()" << std::endl;
+		std::cout <<  __PRETTY_FUNCTION__  << std::endl;
 		Delete();
 	}
 	// Copy illegal
@@ -29,10 +29,10 @@ public:
 
 	// Move
 	UniquePointer(UniquePointer<T> && src) : resource(src.release()) {
-		std::cout << "UniquePointer(UniquePointer<T>&& src)" << std::endl;
+		std::cout <<  __PRETTY_FUNCTION__  << std::endl;
 	}
 	UniquePointer& operator=(UniquePointer<T> && src){
-		std::cout << "UniquePointer& operator=(UniquePointer<T> && src)" << std::endl;
+		std::cout <<  __PRETTY_FUNCTION__  << std::endl;
 
 		if(this == &src) return *this;
 
@@ -44,11 +44,11 @@ public:
 	template<class U>
 	explicit
 	UniquePointer(UniquePointer<U>&& src) : resource(src.release()) {
-		std::cout << "UniquePointer(UniquePointer<U>&& src)" << std::endl;
+		std::cout <<  __PRETTY_FUNCTION__  << std::endl;
 	}
 	template<class U>
 	UniquePointer& operator=(UniquePointer<U> && src){
-		std::cout << "UniquePointer& operator=(UniquePointer<U> && src)" << std::endl;
+		std::cout <<  __PRETTY_FUNCTION__  << std::endl;
 
 		Delete();
 		resource = src.release();
@@ -78,7 +78,7 @@ private:
 template<class T, class ...ParamTypes>
 auto makeUnique(ParamTypes&& ...params) //-> UniquePointer<T> // C++11/ohne C++14
 {
-	std::cout << "makeUnique(ParamTypes&& ...params)" << std::endl;
+	std::cout <<  __PRETTY_FUNCTION__  << std::endl;
 	//RVO
 	return UniquePointer<T> (new T(std::forward<ParamTypes>(params)...));
 }

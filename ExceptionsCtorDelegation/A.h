@@ -71,7 +71,7 @@ public:
 	}
 	static void operator delete(void* p, std::size_t size){
 		std::cout << "void* A::operator delete(void* p, std::size_t size)" << std::endl;
-		::operator delete(p, size);
+		::operator delete(p);
 	}
 };
 

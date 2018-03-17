@@ -1,9 +1,9 @@
 // Operationen die der Compiler zur Verfügung stellt //
 
 //#include "A1Empty.h"
-#include "A2.h"
+//#include "A2.h"
 //#include "A3MemberBC.h"
-//#include "A4BaseBC.h"
+#include "A4BaseBC.h"
 //#include "A5MemberbBaseC.h"
 
 #include <iostream>
