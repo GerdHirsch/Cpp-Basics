@@ -18,6 +18,6 @@ void demoHanoiTurmIterativ();
 int main(){
 	cout << "TuermeVonHanoi" << endl;
 //	demoStackbased();
-//	demoHanoiTurmRekursiv();
-	demoHanoiTurmIterativ();
+	demoHanoiTurmRekursiv();
+//	demoHanoiTurmIterativ();
 }

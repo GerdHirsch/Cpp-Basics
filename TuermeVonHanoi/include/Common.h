@@ -20,7 +20,7 @@ void print(Ring number, Turm& target, Turm& source, Turm& t){
 	target.print(std::cout);
 	std::cout << "src: ";
 	source.print(std::cout);
-	std::cout << "htm: ";
+	std::cout << "tmp: ";
 	t.print(std::cout);
 
 	std::cout << std::endl;

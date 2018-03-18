@@ -21,20 +21,24 @@ Turm a(biggest, "a"), b("b"), c("c");
 Ring one(1);
 
 template<class Ring, class Turm>
-void move(Ring ring, Turm& target, Turm& source, Turm& ht){
-	print(ring, target, source, ht);
-
+void move(Ring ring, Turm& target, Turm& source, Turm& tmp){
+	print(ring, target, source, tmp);
+	// Wenns der kleinste ist: verschieben
 	if(ring == one){
 		target.push(source.top());
 		source.pop();
+		print(ring, target, source, tmp);
 	}else{
-		move(ring-1, ht, source, target);
+		// den stappel über dem untersten Ring auf tmp verschieben
+		move(ring-1, tmp, source, target);
+		print(ring, target, source, tmp);
 
-		//letzten Ring von n nach target verschieben
+		//untersten Ring von source nach target verschieben
 		target.push(source.top());
 		source.pop();
 
-		move(ring-1, target, ht, source);
+		// den stappel von tmp nach target verschieben
+		move(ring-1, target, tmp, source);
 	}
 }
 
