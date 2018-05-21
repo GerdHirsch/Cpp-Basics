@@ -16,13 +16,15 @@ void demoRawStringDelimiter();
 void demoMyInt();
 void demoDistance();
 void demoB3();
+void demoStdLiterals();
 int main(){
 	cout << "BenutzerdefinierteLiterale" << endl;
 
 //	demoDistance();
 //	demoMyInt();
-	demoB3();
-	demoRawStringDelimiter();
+//	demoB3();
+//	demoRawStringDelimiter();
+	demoStdLiterals();
 }
 void demoRawStringDelimiter(){
 	cout << R"mydelim(Raw \ String } ? () "textinhochkomma")mydelim" << endl;
