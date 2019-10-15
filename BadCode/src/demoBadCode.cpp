@@ -19,7 +19,7 @@ void demoBadCode(){
 
 	MessageController controller(&socket0, &socket1, &socket2);
 
-	controller.warne();
+	controller.init();
 	controller.sendIPMessages();
 
 }

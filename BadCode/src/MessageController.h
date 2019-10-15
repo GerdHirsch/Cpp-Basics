@@ -1,11 +1,11 @@
 ///////////////////////////////////////////////////////////
-//  Ampel.h
-//  Implementation of the Class Ampel
+//  MESSAGE_CONTROLLER_H.h
+//  Implementation of the Class MESSAGE_CONTROLLER_H
 //  Created on:      30-Sep-2008 14:54:01
 ///////////////////////////////////////////////////////////
 
-#ifndef AMPEL
-#define AMPEL
+#ifndef MESSAGE_CONTROLLER_H
+#define MESSAGE_CONTROLLER_H
 
 //forward declaration
 class DemoSocket;
@@ -13,11 +13,11 @@ class DemoSocket;
 class MessageController
 {
 public:
-	MessageController(DemoSocket* rot, DemoSocket* gelb, DemoSocket* gruen);
+	MessageController(DemoSocket* s1, DemoSocket* s2, DemoSocket* s3);
 
-	virtual void aus();
+	virtual void off();
 	virtual void sendIPMessages();
-	virtual void warne();
+	virtual void init();
 
 	enum ControllerStates
 	{
@@ -38,4 +38,4 @@ private:
 };
 
 
-#endif // (AMPEL)
+#endif // (MESSAGE_CONTROLLER_H)

@@ -11,7 +11,7 @@ using namespace std;
 #include "MessageController.h"
 #include "DemoSocket.h"
 
-void MessageController::aus(){
+void MessageController::off(){
 	if (state != CASE0 && state != CASE5)
 		throw std::logic_error("MessageController.aus() in wrong State");
 
@@ -64,11 +64,11 @@ MessageController::MessageController(DemoSocket* socket1, DemoSocket* socket2, D
 	{}
 
 
-void MessageController::warne(){
+void MessageController::init(){
 /*
 	Alles Ausschalten und blinken Thread starten
 */
-        cout << "MessageController::warne()" << endl;
+        cout << "MessageController::init()" << endl;
 
 	state = CASE5;
 	socket1->send(0);

@@ -4,23 +4,23 @@
 //  Created on:      18-Okt-2008 23:29:23
 //  Original author: Gerd
 ///////////////////////////////////////////////////////////
-#include "Lampe.h"
-
 #include <string>
 #include <iostream>
+
+#include "IPLightBulb.h"
 using namespace std;
 
-Lampe::Lampe(const std::string&  ipAddresse):ipAddresse(ipAddresse)
+IPLightBulb::IPLightBulb(const std::string&  ipAddress):ipAddress(ipAddress)
 {}
 
-void Lampe::aus(){
+void IPLightBulb::off(){
 	an = false;
-	cout << ipAddresse <<".aus()\tLampe" << endl;
+	cout << ipAddress <<".off()\tIPLightBulb" << endl;
 	//hier die IP Kommunikation etablieren
 }
 
-void Lampe::ein(){
+void IPLightBulb::on(){
 	an = true;
-	cout << ipAddresse <<".ein()\tLampe" << endl;
+	cout << ipAddress <<".on()\tIPLightBulb" << endl;
 	//hier die IP Kommunikation etagblieren
 }

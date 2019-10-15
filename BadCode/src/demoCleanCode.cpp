@@ -5,23 +5,23 @@
  *      Author: Gerd
  */
 
-#include "Ampel.h"
-#include "Lampe.h"
-
 #include <iostream>
+
+#include "IPLightBulb.h"
+#include "TrafficLight.h"
 using namespace std;
 
 void demoCleanCode(){
 	cout << "demoCleanCode()" << endl;
 
-	Lampe rot("a1.rot");
-	Lampe gelb("a1.gelb");
-	Lampe gruen("a1.gruen");
+	IPLightBulb red("a1.red");
+	IPLightBulb yellow("a1.yellow");
+	IPLightBulb green("a1.green");
 
-	Ampel a1(&rot, &gelb, &gruen);
+	TrafficLight a1(&red, &yellow, &green);
 
-	a1.warne();
-	a1.umschalten();
+	a1.warn();
+	a1.switchOver();
 }
 
 

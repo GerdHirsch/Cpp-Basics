@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////
-//  Lampe.cpp
-//  Implementation of the Class IPLampe
+//  DemoSocket.cpp
+//  Implementation of the Class DemoSocket
 //  Created on:      18-Okt-2008 23:29:23
 //  Original author: Gerd
 ///////////////////////////////////////////////////////////
@@ -17,5 +17,5 @@ DemoSocket::DemoSocket(const std::string&  ipAddresse):ipAddresse(ipAddresse)
 void DemoSocket::send(unsigned int message){
 	an = message;
 	cout << ipAddresse <<".send(" << message << ")\tSocket" << endl;
-	//hier die IP Kommunikation etablieren
+	//Todo: establish IP communication
 }
