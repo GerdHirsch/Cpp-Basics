@@ -4,14 +4,21 @@
 #include "C.h"
 #include "B.h"
 
+#include <iostream>
+
 class A : public C
 {
 public:
-	A() : C{} { std::cout << "A::A()" << std::endl; }
+	A() : C{} {
+		std::cout << __PRETTY_FUNCTION__ << std::endl;
+		std::cout << "A::A()" << std::endl;
+	}
 
-	//explicit
-	A(A const& src) : C{src}, b{src.b}, i{src.i}
-		{ std::cout << "A::A(A const& src)" << std::endl; }
+//	explicit
+	A(A const& src) : C{src}, b{src.b}, i{src.i}{
+		std::cout << __PRETTY_FUNCTION__ << std::endl;
+		std::cout << "A::A(A const& src)" << std::endl;
+	}
 
 	//explicit
 	A(A && src) : C(std::move(src)), b(std::move(src.b)), i{src.i}

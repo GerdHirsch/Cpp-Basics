@@ -1,0 +1,20 @@
+BadCode
+demoBadCode()
+MessageController::warne()
+127.0.0.001/2010.send(0)	Socket
+127.0.0.001/2011.send(1)	Socket
+127.0.0.001/2012.send(0)	Socket
+MessageController::sendIPMessages()
+127.0.0.001/2010.send(0)	Socket
+127.0.0.001/2011.send(1)	Socket
+127.0.0.001/2012.send(0)	Socket
+
+demoCleanCode()
+Ampel::warne()
+a1.red.off()	IPLightBulb
+a1.yellow.on()	IPLightBulb
+a1.green.off()	IPLightBulb
+TrafficLight::switchOver() in State: TWINKLING
+a1.red.off()	IPLightBulb
+a1.yellow.on()	IPLightBulb
+a1.green.off()	IPLightBulb

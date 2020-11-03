@@ -4,8 +4,13 @@
  *  Created on: 28.01.2018
  *      Author: Gerd
  */
-
-#include "A2.h"
+//#include "A1Empty.h"
+#include "A1EmptyMemberBC.h"
+//#include "A1EmptyMemberbBaseC.h"
+//#include "A2.h"
+//#include "A3MemberBC.h"
+//#include "A4BaseBC.h"
+//#include "A5MemberbBaseC.h"
 
 #include <iostream>
 using namespace std;
@@ -37,21 +42,24 @@ A f6(A a) {
 	return a;
 }
 
-void rvo(){
-	cout << "=== rvo return valaue optimization" << endl;
-	cout << "=== f1" << endl;
-	A a1;// = f1();
-	a1 = f1();
-	cout << "=== f2" << endl;
-	A a2 = f2();
-	cout << "=== f3" << endl;
-	A a3 = f3();
-	cout << "=== f4" << endl;
-	A a4 = f4(a1);
-	cout << "=== f5" << endl;
-	A a5 = f5(a2);
-	cout << "=== f6" << endl;
-	A a6 = f6(a3);
+void parameterAndReturnExpressions(){
+	cout << "=== rvo return value optimization" << endl;
+		{
+		cout << "=== begin of block" << endl;
+	//	cout << "=== A a1 = f1();" << endl;
+	//	A a1 = f1();
+		cout << "=== A a2 = f2();" << endl;
+		A a2 = f2();
+	//	cout << "=== A a3 = f3();" << endl;
+	//	A a3 = f3();
+	//	cout << "=== A a4 = f4(a1);" << endl;
+	//	A a4 = f4(a1);
+	//	cout << "=== A a5 = f5(a2);" << endl;
+	//	A a5 = f5(a2);
+	//	cout << "=== A a6 = f6(a3);" << endl;
+	//	A a6 = f6(a3);
+		cout << "=== end of block" << endl;
+	}
 
 	cout << "=== end rvo return valaue optimization" << endl;
 

@@ -1,21 +1,23 @@
-// Operationen die der Compiler zur Verfügung stellt //
+// Operationen die der Compiler zur Verfï¿½gung stellt //
 
 //#include "A1Empty.h"
+#include "A1EmptyMemberBC.h"
+//#include "A1EmptyMemberbBaseC.h"
 //#include "A2.h"
 //#include "A3MemberBC.h"
-#include "A4BaseBC.h"
+//#include "A4BaseBC.h"
 //#include "A5MemberbBaseC.h"
 
 #include <iostream>
-#include <utility>
+//#include <utility>
 using namespace std;
 
-// comment in for experience propose
-A f(){ return A(); }
-//void f(A&& a){ cout << "void f(A&& a)" << endl; }
+// comment in for experience purpose
+A f(){ return A(); } // RVO
+void f(A&& a){ cout << "void f(A&& a)" << endl; }
 //void f(A& a){ cout << "void f(A& a)" << endl; }
-void f(A a){ cout << "void f(A a)" << endl; }
-//void f(A const& a){ cout << "void f(A const& a)" << endl; }
+//void f(A a){ cout << "void f(A a)" << endl; }
+void f(A const& a){ cout << "void f(A const& a)" << endl; }
 
 void lebenszyklus()
 {
@@ -25,14 +27,17 @@ void lebenszyklus()
 
 		cout << "=== A a1;" << endl;
 		A a1;
+
 		cout << "a1.i: " << a1.i << endl;
+		a1.i = 42;
+		cout << "a1.i = 42: " << a1.i << endl;
 
 		cout << "=== A a2 = a1;" << endl;
 		A a2 = a1;
 		cout << "a2.i: " << a2.i << endl;
 
 		cout << "=== A a3(a1);" << endl;
-		A a3(a2);
+		A a3(a1);
 		cout << "a3.i: " << a3.i << endl;
 
 		a1.i = 43;

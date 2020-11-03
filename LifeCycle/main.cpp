@@ -1,13 +1,13 @@
 #include <iostream>
 
 void lebenszyklus();
-void rvo(); // return value optimization
+void parameterAndReturnExpressions(); // return value optimization
 
 using namespace std;
 
 int main(){
 	cout << "Lebenszyklus" << endl;
-//	lebenszyklus();
-	rvo();
+	lebenszyklus();
+	parameterAndReturnExpressions();
 }
 
