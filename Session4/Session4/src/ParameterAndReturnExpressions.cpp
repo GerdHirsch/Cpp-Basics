@@ -23,7 +23,7 @@ A f3(A& ra) {
 	return std::move(ra);
 }
 A f4(A const& rca){
-	cout << "A f4(A const& ra) return rca;" << endl;
+	cout << "A f4(A const& rca) return rca;" << endl;
 	return rca;
 //	return std::move(rca);
 }
