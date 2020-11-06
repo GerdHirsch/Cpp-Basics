@@ -26,7 +26,10 @@ void demoLostResource(){
 	if(!pA) return;
 
 	cout << "=== pA->operation();" << endl;
+
 	pA->operation();
+
+	(*pA).operation();
 
 	// here we have some code for maintenance
 	// and we put a return statement into the function
@@ -56,13 +59,17 @@ void demoRAII(){
 
 	cout << "demoRAII()" << endl;
 	cout << "=== Handler handler = createResource();" << endl;
-	Handler handler = createResource();
+	Handler handler = createResource(); // RVO
 
 	cout << "=== if(!handler)" << endl;
-	if(!handler) return;
+	if(!handler) return; // return resource != nullptr
 
 	cout << "=== handler->operation();" << endl;
+
 	handler->operation();
+	handler.operator->()->operation();
+
+	(*handler).operation();
 
 	// here we have some code for maintenance
 	// and we put a return statement into the function

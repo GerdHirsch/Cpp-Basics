@@ -36,6 +36,7 @@ public:
 		std::cout << "A& A::operator=(A && src)" << std::endl;
 		return *this;
 	}
+private:
 	B b = B(50);
 	int i = 42;
 };
