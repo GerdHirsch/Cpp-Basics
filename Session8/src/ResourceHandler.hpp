@@ -31,6 +31,10 @@ public:
 	}
 	ResourceHandler& operator=(ResourceHandler&& rhs){
 		std::cout << __PRETTY_FUNCTION__ << std::endl;
+
+		if(this == &rhs) return; // selfassignment guard
+
+		delete this->resource;
 		this->resource = rhs.resource;
 		rhs.resource = nullptr;
 		return *this;
