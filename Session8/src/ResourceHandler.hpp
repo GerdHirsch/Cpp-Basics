@@ -14,13 +14,11 @@
 class ResourceHandler{
 	using Resource = C;
 public:
-	ResourceHandler(Resource* resource):resource(resource){
-		std::cout << __PRETTY_FUNCTION__ << std::endl;
-	}
+	ResourceHandler(Resource* resource):resource(resource){ 		// @suppress("Use reference parameters instead of pointer parameters.")
+		std::cout << __PRETTY_FUNCTION__ << std::endl; }
 	~ResourceHandler(){
 		std::cout << __PRETTY_FUNCTION__ << std::endl;
-		delete resource;
-	}
+		delete resource; }
 	// no copy operations
 	ResourceHandler(ResourceHandler const&) = delete;
 	ResourceHandler& operator=(ResourceHandler const&) = delete;
@@ -31,9 +29,8 @@ public:
 	}
 	ResourceHandler& operator=(ResourceHandler&& rhs){
 		std::cout << __PRETTY_FUNCTION__ << std::endl;
-
-		if(this == &rhs) return; // selfassignment guard
-
+		if(this == &rhs) // selfassignment guard
+			return *this;
 		delete this->resource;
 		this->resource = rhs.resource;
 		rhs.resource = nullptr;
@@ -48,7 +45,6 @@ public:
 	Resource& operator*()const{
 		std::cout << __PRETTY_FUNCTION__ << std::endl;
 		return *resource; }
-
 private:
 	Resource *resource=nullptr;
 };

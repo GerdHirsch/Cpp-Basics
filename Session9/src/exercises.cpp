@@ -5,8 +5,8 @@
  *      Author: user
  */
 
+#include "UniquePointer.hpp"
 #include "AMemberbBaseC.h"
-#include "ResourceHandler.hpp"
 
 #include <iostream>
 using namespace std;
@@ -43,7 +43,7 @@ void demoLostResource(){
 	delete pA;
 }
 
-using Handler = ResourceHandler;
+using Handler = UniquePointer<C>;
 
 void callFunctionMayThrowAnException(Handler handler){
 	// may throw an exception
@@ -85,4 +85,28 @@ void demoRAII(){
 	cout << "=== end demoRAII" << endl;
 }
 
+void demoConversions(){
+	cout << "demoConversions()" << endl;
+	{
+		cout << "{" << endl << " === begin block" << endl;
+		cout << "=== UniquePointer xHandler(new X)" << endl;
+		UniquePointer<A> aHandler(new A);
+		UniquePointer<A> a1Handler(new A);
+		UniquePointer<B> bHandler(new B);
+		UniquePointer<C> c1Handler(new C);
+		cout << "=== UniquePointer c2Handler(std::move(a1Handler))" << endl;
+		UniquePointer<C> c2Handler(std::move(a1Handler));
+		cout << "=== c1Handler->operation();" << endl;
+		c1Handler->operation();
+		cout << "=== c2Handler->operation();" << endl;
+		c2Handler->operation();
+		cout << "=== c1Handler = std::move(aHandler);" << endl;
+		c1Handler = std::move(aHandler);
+		cout << "=== c1Handler->operation();" << endl;
+		c1Handler->operation();
 
+//		cout << "c1Handler = std::move(bHandler);" << endl;
+//		c1Handler = std::move(bHandler);
+		cout << "}" << endl << " === end block" << endl;
+	}
+}
