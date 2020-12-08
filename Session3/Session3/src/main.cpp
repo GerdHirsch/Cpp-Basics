@@ -14,9 +14,11 @@ using namespace std;
 
 void lifecycle();
 void demoAssignment();
+void demoValueCategories();
 int main(){
 	cout << "Session 3" << endl;
-	lifecycle();
+//	lifecycle();
+	demoValueCategories();
 
 
 }
