@@ -28,11 +28,11 @@ public:
 		return *this;
 	}
 	// conversions
-	explicit
+//	explicit
 	A(int i):i(i){
 		std::cout << __PRETTY_FUNCTION__ << std::endl;
 	}
-	explicit
+//	explicit
 	operator int()const {
 		std::cout << __PRETTY_FUNCTION__ << std::endl;
 		return i;

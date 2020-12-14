@@ -67,14 +67,18 @@ void exercise3(){
 	cout << "=== fint(b);" << endl;
 //	fint(b);
 	fint(static_cast<int>(A(static_cast<A>(b))));
-	if(b){
-		cout << "b is true :-)" << endl;
-	}else{
-		cout << "b is false :-(" << endl;
-	}
+//	if(b){
+//		cout << "b is true :-)" << endl;
+//	}else{
+//		cout << "b is false :-(" << endl;
+//	}
 }
 
 void exercise4(){
 	cout << __PRETTY_FUNCTION__ << endl;
-
+	cout << "=== B b;" << endl;
+		B b;
+		cout << "=== fint(b);" << endl;
+		fint(b);
+		fint(static_cast<int>(A(static_cast<A>(b))));
 }

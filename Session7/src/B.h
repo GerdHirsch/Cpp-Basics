@@ -36,16 +36,16 @@ public:
 		std::cout << __PRETTY_FUNCTION__ << std::endl;
 	}
 	// conversions
-	explicit
+//	explicit
 	operator A() const {
 		std::cout << __PRETTY_FUNCTION__ << std::endl;
 		return A();
 	}
-	explicit
-	operator bool() const{
-		std::cout << __PRETTY_FUNCTION__ << std::endl;
-		return true;
-	}
+//	explicit
+//	operator bool() const{
+//		std::cout << __PRETTY_FUNCTION__ << std::endl;
+//		return true;
+//	}
 
 	int i;
 };
