@@ -5,15 +5,15 @@
  *      Author: user
  */
 
+#include "BaseDerived.h"
+
 #include <iostream>
 using namespace std;
 
-void demo();
 
 int main(){
-	cout << "Session 2" << endl;
-	demo();
-
+	cout << "Session 2 Initialization" << endl;
+	Derived d;
 }
 
 

@@ -1,0 +1,36 @@
+/*
+ * BaseDerived.cpp
+ *
+ *  Created on: Jan 12, 2021
+ *      Author: user
+ */
+
+
+Base::~Base(){ /* Methodbody */ }
+
+Base::Operation1(){ /* Methodbody */ }
+
+Base::Operation2(){ /* Methodbody */ }
+
+
+
+
+
+Derived::~Derived(){ /* Methodbody */ }
+
+Derived::Operation1(){ /* Methodbody */ }
+
+Derived::Operation3(){ /* Methodbody */ }
+
+void demoVirtualFunctionCallPseudocode(Base& b){
+	b.operation1();
+	// what the compiler may generate
+	vtable = b.vtable;
+	index = getIndexFromClassHeader(Base, operation);
+	vtable[index]();
+}
+void demo(){
+	Derived d;
+	demoVirtualFunctionCallPseudocode(d);
+}
+

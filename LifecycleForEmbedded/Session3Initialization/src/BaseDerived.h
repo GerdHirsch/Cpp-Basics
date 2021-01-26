@@ -10,15 +10,22 @@
 
 #include <iostream>
 
+class Base;
+class Member{
+	Member(Base* base);
+};
+
 // no declared non-static members / attributes
 class Base{
 public:
 	Base(){
-//		this->operation();
+		std::cout << __PRETTY_FUNCTION__ << std::endl;
+		this->Operation1();
+		OperationPure();
 	}
 	virtual ~Base(){
 		std::cout << __PRETTY_FUNCTION__ << std::endl;
-//		this->operation();
+		this->Operation1();
 	}
 	virtual void Operation1(){
 		std::cout << __PRETTY_FUNCTION__ << std::endl;
@@ -26,16 +33,18 @@ public:
 	virtual void Operation2(){
 
 	}
+	virtual void OperationPure() = 0;
 };
 // no declared non-static members / attributes
 class Derived : public Base{
 public:
 	Derived(){
-//		this->operation();
+		std::cout << __PRETTY_FUNCTION__ << std::endl;
+		this->Operation1();
 	}
 	~Derived(){
 		std::cout << __PRETTY_FUNCTION__ << std::endl;
-//		this->operation();
+		this->Operation1();
 	}
 	void Operation1()override{
 		std::cout << __PRETTY_FUNCTION__ << std::endl;
@@ -43,6 +52,7 @@ public:
 	virtual void Operation3(){
 
 	}
+	virtual void OperationPure(){ };
 };
 
 #endif /* BASEDERIVED_H_ */

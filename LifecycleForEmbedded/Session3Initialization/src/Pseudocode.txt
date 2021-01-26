@@ -1,0 +1,11 @@
+void demoVirtualFunctionCallPseudocode(Base& b){
+	b.Operation1();
+	// what the compiler may generate
+	vtable = b.vtable;
+	index = getIndexFromClassHeader(Base, Operation1);
+	vtable[index]();
+}
+void demo(){
+	Derived d;
+	demoVirtualFunctionCallPseudocode(d);
+}

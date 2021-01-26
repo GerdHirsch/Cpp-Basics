@@ -11,11 +11,15 @@ using namespace std;
 void demoSizeofNonVirtuals();
 void demoCallOfNonVirtuals();
 void demoSizeofInheritance();
+void demoAlignment();
+void demoPadding();
 
 int main(){
 	cout << "Session 1" << endl;
-	demoSizeofNonVirtuals();
-	demoCallOfNonVirtuals();
+//	demoSizeofNonVirtuals();
+//	demoCallOfNonVirtuals();
+	demoAlignment();
+	demoPadding();
 
 }
 

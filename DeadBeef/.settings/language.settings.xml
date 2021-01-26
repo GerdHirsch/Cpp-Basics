@@ -11,7 +11,7 @@
             			
             <provider-reference id="org.eclipse.cdt.managedbuilder.core.MBSLanguageSettingsProvider" ref="shared-provider"/>
             			
-            <provider class="org.eclipse.cdt.managedbuilder.internal.language.settings.providers.GCCBuiltinSpecsDetectorCygwin" console="false" env-hash="-1322252943180083847" id="org.eclipse.cdt.managedbuilder.core.GCCBuiltinSpecsDetectorCygwin" keep-relative-paths="false" name="CDT GCC Built-in Compiler Settings Cygwin" parameter="${COMMAND} ${FLAGS} -E -P -v -dD &quot;${INPUTS}&quot; -std=c++1y" store-entries-with-project="true">
+            <provider class="org.eclipse.cdt.managedbuilder.internal.language.settings.providers.GCCBuiltinSpecsDetectorCygwin" console="false" env-hash="-1359984377329936839" id="org.eclipse.cdt.managedbuilder.core.GCCBuiltinSpecsDetectorCygwin" keep-relative-paths="false" name="CDT GCC Built-in Compiler Settings Cygwin" parameter="${COMMAND} ${FLAGS} -E -P -v -dD &quot;${INPUTS}&quot; -std=c++1y" store-entries-with-project="true">
                 				
                 <language-scope id="org.eclipse.cdt.core.gcc"/>
                 				
@@ -103,7 +103,19 @@
                         					
                     </entry>
                     					
+                    <entry kind="macro" name="__ATOMIC_RELEASE" value="1E-6DF">
+                        						
+                        <flag value="BUILTIN|READONLY"/>
+                        					
+                    </entry>
+                    					
                     <entry kind="macro" name="__ATOMIC_SEQ_CST" value="5">
+                        						
+                        <flag value="BUILTIN|READONLY"/>
+                        					
+                    </entry>
+                    					
+                    <entry kind="macro" name="__ATOMIC_SEQ_CST" value="9.999999E96DF">
                         						
                         <flag value="BUILTIN|READONLY"/>
                         					
@@ -265,12 +277,6 @@
                         					
                     </entry>
                     					
-                    <entry kind="macro" name="__DEC32_EPSILON__" value="1E-6DF">
-                        						
-                        <flag value="BUILTIN|READONLY"/>
-                        					
-                    </entry>
-                    					
                     <entry kind="macro" name="__DEC32_MANT_DIG__" value="7">
                         						
                         <flag value="BUILTIN|READONLY"/>
@@ -278,12 +284,6 @@
                     </entry>
                     					
                     <entry kind="macro" name="__DEC32_MAX_EXP__" value="97">
-                        						
-                        <flag value="BUILTIN|READONLY"/>
-                        					
-                    </entry>
-                    					
-                    <entry kind="macro" name="__DEC32_MAX__" value="9.999999E96DF">
                         						
                         <flag value="BUILTIN|READONLY"/>
                         					
@@ -314,12 +314,6 @@
                     </entry>
                     					
                     <entry kind="macro" name="__DEC64_MANT_DIG__" value="16">
-                        						
-                        <flag value="BUILTIN|READONLY"/>
-                        					
-                    </entry>
-                    					
-                    <entry kind="macro" name="__DEC64_MAX_EXP__" value="385">
                         						
                         <flag value="BUILTIN|READONLY"/>
                         					
@@ -973,12 +967,6 @@
                         					
                     </entry>
                     					
-                    <entry kind="macro" name="__GCC_ATOMIC_TEST_AND_SET_TRUEVAL" value="1">
-                        						
-                        <flag value="BUILTIN|READONLY"/>
-                        					
-                    </entry>
-                    					
                     <entry kind="macro" name="__GCC_ATOMIC_WCHAR_T_LOCK_FREE" value="2">
                         						
                         <flag value="BUILTIN|READONLY"/>
@@ -1070,6 +1058,12 @@
                     </entry>
                     					
                     <entry kind="macro" name="__INT16_TYPE__" value="short int">
+                        						
+                        <flag value="BUILTIN|READONLY"/>
+                        					
+                    </entry>
+                    					
+                    <entry kind="macro" name="__INT16_TYPE__" value="1">
                         						
                         <flag value="BUILTIN|READONLY"/>
                         					
@@ -1483,6 +1477,12 @@
                         					
                     </entry>
                     					
+                    <entry kind="macro" name="__PIE__" value="385">
+                        						
+                        <flag value="BUILTIN|READONLY"/>
+                        					
+                    </entry>
+                    					
                     <entry kind="macro" name="__PRAGMA_REDEFINE_EXTNAME" value="1">
                         						
                         <flag value="BUILTIN|READONLY"/>
@@ -1694,12 +1694,6 @@
                     </entry>
                     					
                     <entry kind="macro" name="__SSE_MATH__" value="1">
-                        						
-                        <flag value="BUILTIN|READONLY"/>
-                        					
-                    </entry>
-                    					
-                    <entry kind="macro" name="__SSE__" value="1">
                         						
                         <flag value="BUILTIN|READONLY"/>
                         					
@@ -1963,6 +1957,12 @@
                         					
                     </entry>
                     					
+                    <entry kind="macro" name="__UINT_LEAST8_TYPE__" value="1">
+                        						
+                        <flag value="BUILTIN|READONLY"/>
+                        					
+                    </entry>
+                    					
                     <entry kind="macro" name="__USER_LABEL_PREFIX__" value="">
                         						
                         <flag value="BUILTIN|READONLY"/>
@@ -2029,13 +2029,13 @@
                         					
                     </entry>
                     					
-                    <entry kind="macro" name="__amd64__" value="1">
+                    <entry kind="macro" name="__code_model_small__" value="1">
                         						
                         <flag value="BUILTIN|READONLY"/>
                         					
                     </entry>
                     					
-                    <entry kind="macro" name="__code_model_small__" value="1">
+                    <entry kind="macro" name="__cpp_rtti" value="1">
                         						
                         <flag value="BUILTIN|READONLY"/>
                         					
@@ -4517,7 +4517,7 @@
             			
             <provider-reference id="org.eclipse.cdt.managedbuilder.core.MBSLanguageSettingsProvider" ref="shared-provider"/>
             			
-            <provider class="org.eclipse.cdt.managedbuilder.internal.language.settings.providers.GCCBuiltinSpecsDetectorCygwin" console="false" env-hash="-1322252943180083847" id="org.eclipse.cdt.managedbuilder.core.GCCBuiltinSpecsDetectorCygwin" keep-relative-paths="false" name="CDT GCC Built-in Compiler Settings Cygwin" parameter="${COMMAND} ${FLAGS} -E -P -v -dD &quot;${INPUTS}&quot; -std=c++1y" store-entries-with-project="true">
+            <provider class="org.eclipse.cdt.managedbuilder.internal.language.settings.providers.GCCBuiltinSpecsDetectorCygwin" console="false" env-hash="-1359984377329936839" id="org.eclipse.cdt.managedbuilder.core.GCCBuiltinSpecsDetectorCygwin" keep-relative-paths="false" name="CDT GCC Built-in Compiler Settings Cygwin" parameter="${COMMAND} ${FLAGS} -E -P -v -dD &quot;${INPUTS}&quot; -std=c++1y" store-entries-with-project="true">
                 				
                 <language-scope id="org.eclipse.cdt.core.gcc"/>
                 				
@@ -5011,12 +5011,6 @@
                         					
                     </entry>
                     					
-                    <entry kind="macro" name="__FLT32X_HAS_QUIET_NAN__" value="1">
-                        						
-                        <flag value="BUILTIN|READONLY"/>
-                        					
-                    </entry>
-                    					
                     <entry kind="macro" name="__FLT32X_MANT_DIG__" value="53">
                         						
                         <flag value="BUILTIN|READONLY"/>
@@ -5371,12 +5365,6 @@
                         					
                     </entry>
                     					
-                    <entry kind="macro" name="__FLT_MAX_10_EXP__" value="38">
-                        						
-                        <flag value="BUILTIN|READONLY"/>
-                        					
-                    </entry>
-                    					
                     <entry kind="macro" name="__FLT_MAX_EXP__" value="128">
                         						
                         <flag value="BUILTIN|READONLY"/>
@@ -5408,6 +5396,12 @@
                     </entry>
                     					
                     <entry kind="macro" name="__FLT_RADIX__" value="2">
+                        						
+                        <flag value="BUILTIN|READONLY"/>
+                        					
+                    </entry>
+                    					
+                    <entry kind="macro" name="__FLT_RADIX__" value="3.36210314311209350626267781732175260e-4932L">
                         						
                         <flag value="BUILTIN|READONLY"/>
                         					
@@ -5534,12 +5528,6 @@
                     </entry>
                     					
                     <entry kind="macro" name="__GNUC_MINOR__" value="5">
-                        						
-                        <flag value="BUILTIN|READONLY"/>
-                        					
-                    </entry>
-                    					
-                    <entry kind="macro" name="__GNUC_PATCHLEVEL__" value="0">
                         						
                         <flag value="BUILTIN|READONLY"/>
                         					
@@ -5779,6 +5767,12 @@
                         					
                     </entry>
                     					
+                    <entry kind="macro" name="__INT_LEAST32_WIDTH__" value="0">
+                        						
+                        <flag value="BUILTIN|READONLY"/>
+                        					
+                    </entry>
+                    					
                     <entry kind="macro" name="__INT_LEAST32_WIDTH__" value="32">
                         						
                         <flag value="BUILTIN|READONLY"/>
@@ -5906,12 +5900,6 @@
                     </entry>
                     					
                     <entry kind="macro" name="__LDBL_MIN_EXP__" value="(-16381)">
-                        						
-                        <flag value="BUILTIN|READONLY"/>
-                        					
-                    </entry>
-                    					
-                    <entry kind="macro" name="__LDBL_MIN__" value="3.36210314311209350626267781732175260e-4932L">
                         						
                         <flag value="BUILTIN|READONLY"/>
                         					
@@ -6434,6 +6422,12 @@
                     </entry>
                     					
                     <entry kind="macro" name="__UINT_LEAST32_MAX__" value="0xffffffffU">
+                        						
+                        <flag value="BUILTIN|READONLY"/>
+                        					
+                    </entry>
+                    					
+                    <entry kind="macro" name="__UINT_LEAST32_MAX__" value="38">
                         						
                         <flag value="BUILTIN|READONLY"/>
                         					
