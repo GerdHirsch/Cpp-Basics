@@ -14,10 +14,25 @@ using namespace std;
 int main(){
 	cout << "DemoOverflow" << endl;
 
-	using NativeType = std::size_t;
-//	using NativeType = signed int;
+	using FundamentalType = std::size_t;
+//	using FundamentalType = signed int;
 	// overflow not defined for signed integers
-	constexpr NativeType value = static_cast<NativeType>(-1) << 4;
+	constexpr FundamentalType value = static_cast<FundamentalType>(-1) << 4;
 	cout << hex << "value: " << value << endl;
+
+
+	FundamentalType ui{0};
+	cout
+	<< " ui: " << ui << endl
+	<< " ui - 1                             : " << ui - 1 << endl
+	<< " numeric_limits<decltype(ui)>::max(): " << numeric_limits<decltype(ui)>::max()
+	<< endl;
+
+	ui = numeric_limits<decltype(ui)>::max();
+	cout
+	<< " ui : " << ui << endl
+	<< " ui + 1: " << ui + 1
+	<< endl;
+
 }
 
