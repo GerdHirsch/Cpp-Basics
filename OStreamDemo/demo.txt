@@ -1,0 +1,3 @@
+MyOstream something else C-String
+pi: 3.14 the answer: 42 hex: 10
+MyClass
