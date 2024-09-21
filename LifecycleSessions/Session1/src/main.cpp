@@ -21,7 +21,10 @@ void exercise4();
 
 int main(){
 	cout << "Session 1" << endl;
-	exercise1();
+	// exercise1();
+	// exercise2();
+	// exercise3();
+	// exercise4();
 }
 
 

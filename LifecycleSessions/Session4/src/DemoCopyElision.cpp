@@ -9,12 +9,12 @@
 #include "ACustomized.h"
 using namespace std;
 
-//A createA(){ return A(); } // RVO
-//A createA(){ return A(42); } // RVO
-//A createA(){ A a; return a; } // NRVO
+// A createA(){ return A(); } // RVO
+// A createA(){ return A(42); } // RVO
+A createA(){ A a; return a; } // NRVO
 // don't use std::move for return expiring objects!
 // cause (N)RVO can not be applied
-A createA(){ return std::move(A()); } // move
+// A createA(){ return std::move(A()); } // move
 
 
 void demoCopyElision(){

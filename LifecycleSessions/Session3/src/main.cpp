@@ -19,6 +19,7 @@ int main(){
 	cout << "Session 3" << endl;
 //	lifecycle();
 	demoValueCategories();
+	demoAssignment();
 
 
 }

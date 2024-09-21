@@ -79,6 +79,6 @@ void exercise4(){
 	cout << "=== B b;" << endl;
 		B b;
 		cout << "=== fint(b);" << endl;
-		fint(b);
+		// fint(b);
 		fint(static_cast<int>(A(static_cast<A>(b))));
 }

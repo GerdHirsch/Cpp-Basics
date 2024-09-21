@@ -5,38 +5,40 @@
  *      Author: user
  */
 
-void exercise1(){
+// void exercise1(){
 
-	class T;
+// 	class T;
 
-	T t();
+// 	T t();
 
-}
-/*
-void exercise2(){
+// }
 
-	class T{};
+// void exercise2(){
 
-	T t();
+// 	class T{};
 
-	T t2 = t;
-}
-void exercise3(){
+// 	T t();
 
-	class T;
+// 	T t2 = t;
+// }
 
-	T t;
+// void exercise3(){
 
-	T t2 = t;
-}
-*/
-//void exercise4(){
-//
-//	class T{};
-//
-//	T t;
-//
-//	T t2 = t;
-//}
+// 	class T;
+
+// 	T t;
+
+// 	T t2 = t;
+// }
+
+
+// void exercise4(){
+
+// 	class T{};
+
+// 	T t;
+
+// 	T t2 = t;
+// }
 
 

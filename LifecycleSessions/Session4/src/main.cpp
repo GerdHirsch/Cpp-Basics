@@ -17,7 +17,7 @@ void demoCopyElision();
 
 int main(){
 	cout << "Session4" << endl;
-	parameterAndReturnExpressions();
-//	demoCopyElision();
+	// parameterAndReturnExpressions();
+	demoCopyElision();
 }
 
