@@ -46,7 +46,7 @@ public:
 		std::cout << __PRETTY_FUNCTION__ << std::endl;
 		this->Operation1();
 	}
-	void Operation1()override{
+	void Operation1() override{
 		std::cout << __PRETTY_FUNCTION__ << std::endl;
 	}
 	virtual void Operation3(){

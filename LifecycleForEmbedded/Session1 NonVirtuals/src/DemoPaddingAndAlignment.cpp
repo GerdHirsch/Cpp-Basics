@@ -14,14 +14,14 @@ struct alignas(16) DemoAlignedClass{
 void demoAlignment(){
 	cout << "=== demoAlignment" << endl;
 
-	cout << "char:\t" 	<< alignof(char) << endl;
-	cout << "short:\t" 	<< alignof(short) << endl;
-	cout << "int:\t" 	<< alignof(int) << endl;
-	cout << "long:\t"	<< alignof(long) << endl;
-	cout << "long long:\t" << alignof(long long) << endl;
+	cout << "alignof(char):\t" 	<< alignof(char) << endl;
+	cout << "alignof(short):\t" 	<< alignof(short) << endl;
+	cout << "alignof(int):\t" 	<< alignof(int) << endl;
+	cout << "alignof(long):\t"	<< alignof(long) << endl;
+	cout << "alignof(long long):\t" << alignof(long long) << endl;
 	cout << endl;
-	cout << "float:\t" 	<< alignof(float) << endl;
-	cout << "double:\t"	<< alignof(double) << endl;
+	cout << "alignof(float):\t" 	<< alignof(float) << endl;
+	cout << "alignof(double):\t"	<< alignof(double) << endl;
 	cout << endl;
 	cout << "alignof(DemoAlignedClass):\t"
 			<< alignof(DemoAlignedClass) << endl;
